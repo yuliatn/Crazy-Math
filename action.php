@@ -59,9 +59,9 @@
 			
 			include 'dbconfig.php';
 			$db = mysqli_connect($dbhost,$dbuser,$dbpass,$dbname);
-			$query = "INSERT INTO scores (username, score, lasttime, foto)VALUES ('".$_COOKIE['username']."',".$_SESSION['score'].",'".date('Y-m-d H:i:s')."','".$_SESSION['filenameupload']."')";
+			$query = "INSERT INTO scores ( username, score, lasttime, foto)VALUES ('".$_COOKIE['username']."',".$_SESSION['score'].",'".date('Y-m-d H:i:s')."','".$_SESSION['filenameupload']."')";
 			
-			$hasil = mysql_query($db, $query);
+			$hasil = mysqli_query($db, $query);
 		} else {
 	?>
 		<form method="post" action="action.php">
